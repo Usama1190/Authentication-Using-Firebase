@@ -6,6 +6,8 @@ const [loginEmail, loginPassword] = formField;
 
 let forgotPassword = document.getElementById('forgotPassword');
 
+let warning = document.getElementById('warning');
+
 let login_btn = document.getElementById('login_btn');
 
 const login = () => {
@@ -22,6 +24,7 @@ const login = () => {
         console.log(user);
         
         // ...
+        warning.innerText = '';
 
         Toastify({
             text: 'Login Successfully!',
@@ -33,6 +36,8 @@ const login = () => {
 
         const errorCode = error.code;
         const errorMessage = error.message;
+
+        warning.innerText = 'invalid input field';
 
         Toastify({
             text: `${errorMessage}`,
@@ -50,6 +55,7 @@ login_btn.addEventListener('click', login);
 const forgotPass = () => {
     sendPasswordResetEmail(auth, loginEmail.value)
     .then(() => {
+        warning.innerText = 'Password send check email';
         Toastify({
             text: 'Password send check email',
             duration: 3000
@@ -59,6 +65,7 @@ const forgotPass = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
 
+        warning.innerText = 'Something went wrong!';
         Toastify({
             text: `${errorMessage}`,
             duration: 3000

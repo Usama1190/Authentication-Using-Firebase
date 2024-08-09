@@ -15,6 +15,9 @@ const signUp = () => {
     .then((userCredential) => {
         signup_btn.innerText = 'Signup';
         const user = userCredential.user;
+
+        warning.innerText = '';
+
         Toastify({
             text: 'Signup Successfully!',
             duration: 3000
@@ -26,6 +29,9 @@ const signUp = () => {
         signup_btn.innerText = 'Signup';
         const errorCode = error.code;
         const errorMessage = error.message;
+
+        warning.innerText = 'invalid input field!';
+
         Toastify({
             text: `${errorMessage}`,
             duration: 3000

@@ -9,22 +9,21 @@
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    <h1>Login</h1>
+    <form class="form borderColor">
+        <h1 class="heading">Login</h1>
 
-    <form>
-        <label for="email">User Email</label>
-        <input type="email" id="email"><br><br>
+        <input type="email" id="email" class="input" placeholder="Email"><br><br>
         
-
-        <label for="password">User Password</label>
-        <input type="password" id="password"><br><br>
+        <input type="password" id="password" class="input" placeholder="Password"><br><br>
         
+        <p id="forgotPassword">Forgot password</p>
 
-        <a href="../signup/index.html">Don't have an account please signup</a><br><br>
+        <small id="warning" style="color: rgb(216, 97, 97);"></small><br><br>
 
-        <button type="submit" id="login_btn">Login</button>
+        <button type="submit" id="login_btn" class="btn">Login</button><br><br>
+        
+        <small>Don't have an account please<a href="../signup/index.html"> signup</a></small>
 
-        <p id="forgotPassword">Forgot Password</p>
     </form>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
