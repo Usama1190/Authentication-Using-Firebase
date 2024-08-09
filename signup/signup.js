@@ -1,4 +1,4 @@
-import { auth, createUserWithEmailAndPassword } from "../firebase.js";
+import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../firebase.js";
 
 
 let formField = document.querySelectorAll('form input');
@@ -36,6 +36,13 @@ const signUp = () => {
 }
 
 signup_btn.addEventListener('click', signUp);
+
+
+onAuthStateChanged(auth, (user) => {
+    if (user) {
+        window.location.href = '../dashboard/dashboard.html';
+    }
+});
 
 
 // sdfdfdfs
