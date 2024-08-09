@@ -9,22 +9,18 @@
 </head>
 <body>
     <h1>Signup</h1>
-    <form action="">
-        <label for="name">User Name
-            <input type="text" id="name">
-        </label><br><br>
+    <form>
+        <label for="email">User Email</label>
+        <input type="email" id="email" id="userEmail"><br><br>
+        
 
-        <label for="email">User Email
-            <input type="email" id="email">
-        </label><br><br>
-
-        <label for="password">User Password
-            <input type="password" id="password">
-        </label><br><br>
+        <label for="password">User Password</label>
+        <input type="password" id="password" id="userPassword"><br><br>
+        
 
         <a href="../login/index.html">Do you have already account</a>
 
-        <input type="submit" value="Submit">
+        <input type="submit" value="Submit" id="signup_btn">
     </form>
     
     <script type="module" src="../firebase.js"></script>
