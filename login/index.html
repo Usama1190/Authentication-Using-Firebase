@@ -5,25 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <link rel="stylesheet" href="../style.css">
 </head>
 <body>
     <h1>Login</h1>
 
-    <form action="" class="form">
-        <label for="email">User Email
-            <input type="email" id="email" class="input">
-        </label><br><br>
+    <form>
+        <label for="email">User Email</label>
+        <input type="email" id="email"><br><br>
+        
 
-        <label for="password">User Password
-            <input type="password" id="password" class="input">
-        </label><br><br>
+        <label for="password">User Password</label>
+        <input type="password" id="password"><br><br>
+        
 
         <a href="../signup/index.html">Don't have an account please signup</a><br><br>
 
-        <input type="submit" value="Submit" id="login">
+        <button type="submit" id="login_btn">Login</button>
     </form>
 
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
     <script type="module" src="../firebase.js"></script>
     <script type="module" src="login.js"></script>
 </body>

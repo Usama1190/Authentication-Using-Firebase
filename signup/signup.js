@@ -9,9 +9,33 @@ let signup_btn = document.getElementById('signup_btn');
 
 const signUp = () => {
     event.preventDefault();
+    signup_btn.innerText = 'Loading...';
 
-    console.log(userEmail.value, userPassword.value);
-    
+    createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value)
+    .then((userCredential) => {
+        signup_btn.innerText = 'Signup';
+        const user = userCredential.user;
+        Toastify({
+            text: 'Signup Successfully!',
+            duration: 3000
+        }).showToast();
+        
+        // ...
+    })
+    .catch((error) => {
+        signup_btn.innerText = 'Signup';
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        Toastify({
+            text: `${errorMessage}`,
+            duration: 3000
+        }).showToast();
+        
+        // ..
+    });
 }
 
 signup_btn.addEventListener('click', signUp);
+
+
+// sdfdfdfs
