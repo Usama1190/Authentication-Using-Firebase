@@ -41,6 +41,10 @@ body {
     z-index: 1;
 }
 
+.loader_design {
+    font-size: 36px;
+}
+
 .input_wrapper {
     /* border: 1px solid black; */
     width: 80%;
@@ -135,7 +139,32 @@ body {
     font-size: 40px;
 }
 
+.para {
+    font-size: 13px;
+    margin-top: -20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+.logo_firebase {
+    width: 30px;
+    height: 30px;
+}
+
+
+/* dashboard start */
+
+.navbar {
+    border: 1px solid black;
+}
+
+.heading1 {
+    margin-top: 100px;
+    font-size: 50px;
+}
+
+/* dashboard end */
 
 @media (max-width: 920px) {
     .form {

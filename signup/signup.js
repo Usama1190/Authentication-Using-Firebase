@@ -33,7 +33,6 @@ const signUp = () => {
             // ...
         })
         .catch((error) => {
-            // signup_btn.innerText = 'Signup';
             loader.style.display = 'none';
             form.style.opacity = 1;
             const errorCode = error.code;
