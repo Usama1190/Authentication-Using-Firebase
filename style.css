@@ -31,6 +31,16 @@ body {
     padding-bottom: 30px;
 }
 
+#loader {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 38%;
+    height: 76%;
+    z-index: 1;
+}
+
 .input_wrapper {
     /* border: 1px solid black; */
     width: 80%;

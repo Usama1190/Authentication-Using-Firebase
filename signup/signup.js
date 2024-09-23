@@ -3,42 +3,58 @@ import { auth, createUserWithEmailAndPassword, onAuthStateChanged } from "../fir
 
 let formField = document.querySelectorAll('form input');
 
-const [ userEmail, userPassword ] = formField;
+const [ userEmail, userPassword, confirm_passwrod ] = formField;
 
 let signup_btn = document.getElementById('signup_btn');
 
+let form = document.getElementById('form');
+let loader = document.getElementById('loader');
+loader.style.display = 'none';
+
 const signUp = () => {
     event.preventDefault();
-    signup_btn.innerText = 'Loading...';
+    loader.style.display = 'flex';
+    form.style.opacity = 0.3;
+    
+    if(userPassword.value === confirm_passwrod.value) {
+        createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value)
+        .then((userCredential) => {
+            loader.style.display = 'none';
+            form.style.opacity = 1;
+            const user = userCredential.user;
 
-    createUserWithEmailAndPassword(auth, userEmail.value, userPassword.value)
-    .then((userCredential) => {
+            warning.innerText = '';
+
+            Toastify({
+                text: 'Signup Successfully!',
+                duration: 3000
+            }).showToast();
+            
+            // ...
+        })
+        .catch((error) => {
+            // signup_btn.innerText = 'Signup';
+            loader.style.display = 'none';
+            form.style.opacity = 1;
+            const errorCode = error.code;
+            const errorMessage = error.message;
+
+            warning.innerText = 'invalid input field!';
+
+            Toastify({
+                text: `${errorMessage}`,
+                duration: 3000
+            }).showToast();
+            
+            // ..
+        });
+    }
+    else {
         signup_btn.innerText = 'Signup';
-        const user = userCredential.user;
-
-        warning.innerText = '';
-
-        Toastify({
-            text: 'Signup Successfully!',
-            duration: 3000
-        }).showToast();
-        
-        // ...
-    })
-    .catch((error) => {
-        signup_btn.innerText = 'Signup';
-        const errorCode = error.code;
-        const errorMessage = error.message;
-
-        warning.innerText = 'invalid input field!';
-
-        Toastify({
-            text: `${errorMessage}`,
-            duration: 3000
-        }).showToast();
-        
-        // ..
-    });
+        warning.innerText = "confirm password does't matched!";
+        loader.style.display = 'none';
+        form.style.opacity = 1;
+    }    
 }
 
 signup_btn.addEventListener('click', signUp);
