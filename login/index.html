@@ -12,17 +12,24 @@
     <form class="form borderColor">
         <h1 class="heading">Login</h1>
 
-        <input type="email" id="email" class="input" placeholder="Email"><br><br>
-        
-        <input type="password" id="password" class="input" placeholder="Password"><br><br>
-        
-        <p id="forgotPassword">Forgot password</p>
+        <div class="input_wrapper">
+            <input type="email" id="email" class="input" placeholder="Email"><br><br>
+            <input type="password" id="password" class="input" placeholder="Password"><br><br>
+        </div>
+
+        <div class="checkbox_forget_password_wrapper">
+            <label for="rememberme">
+                <input type="checkbox" id="rememberme" class="remember_me_checkbox">
+                Remember me
+            </label>
+            <p id="forgotPassword">Forgot password</p>
+        </div>
 
         <small id="warning" style="color: rgb(216, 97, 97);"></small><br><br>
 
         <button type="submit" id="login_btn" class="btn">Login</button><br><br>
         
-        <small>Don't have an account please<a href="../signup/index.html"> signup</a></small>
+        <small class="another_way">Don't have an account please <a href="../signup/index.html" class="another_way_anchor">Signup</a></small>
 
     </form>
 

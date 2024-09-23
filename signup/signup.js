@@ -49,6 +49,3 @@ onAuthStateChanged(auth, (user) => {
         window.location.href = '../dashboard/dashboard.html';
     }
 });
-
-
-// sdfdfdfs

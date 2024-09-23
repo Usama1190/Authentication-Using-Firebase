@@ -11,15 +11,22 @@
 <body>
     <form class="form borderColor">
         <h1 class="heading">Signup</h1>
-        <input type="email" id="email" id="userEmail" class="input" placeholder="Enter email address"><br><br>
-        
-        <input type="password" id="password" id="userPassword" class="input" placeholder="Create a strong password"><br><br>
-        
+
+        <div class="input_wrapper">
+            <label for="email" class="label">Enter email address</label><br><br>
+            <input type="email" id="email" id="userEmail" class="input" placeholder="Email address"><br><br>
+
+            <label for="userPassword" class="label">Enter password</label><br><br>
+            <input type="password" id="userPassword" class="input" placeholder="Password"><br><br>
+
+            <label for="confirm_passwrod" class="label">Confirm password</label><br><br>
+            <input type="password" id="confirm_passwrod" class="input" placeholder="Re-enter password"><br>
+        </div>
         <small id="warning" style="color: rgb(216, 97, 97);"></small><br><br>
 
         <button type="submit" id="signup_btn" class="btn">Signup</button><br><br>
         
-        <small>Do you have already account, please <a href="../login/index.html">login</a></small>
+        <small class="another_way">Do you have already account, please <a href="../login/index.html" class="another_way_anchor">Login</a></small>
     </form>
     
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>

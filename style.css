@@ -1,5 +1,11 @@
 :root {
     --color-one: #F5F7F9;
+    --color-two: #e6e1e1;
+    --color-three: #16423C;
+    --color-four: #6A9C89;
+    --color-five: #C4DAD2;
+    --color-six: #E9EFEC;
+    --color-seven: #76B8EA;
 }
 
 body {
@@ -9,48 +15,94 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
-    background-color: var(--color-one);
+    background-color: var(--color-six);
 }
 
 .form {
-    border: 1px solid black;
-    width: 45%;
+    border: 1px solid var(--color-three);
+    width: 38%;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 80px;
     border-radius: 10px;
-    height: 60vh;
-    background-color: white;
+    color: var(--color-three);
+    background-color: var(--color-one);
+    /* height: 500px; */
+    /* height: auto; */
+    padding-bottom: 30px;
+}
+
+.input_wrapper {
+    /* border: 1px solid black; */
+    width: 80%;
+    margin: auto;
+    text-align: left;
 }
 
 .input {
-    padding: 5px;
-    border: none;
-    border-bottom: 1px solid rgb(238, 236, 236);
-    width: 50%;
+    padding: 12px;
+    width: 90%;
+    border: 1px solid var(--color-five);
+    border-radius: 6px;
+    font-size: 12px;
+    opacity: 0.6;
 }
 
 .input:focus {
     outline: none;
 }
 
+.remember_me_checkbox {
+    accent-color: var(--color-three);
+}
+
+.label {
+    font-size: 15px;
+    margin-left: -3%;
+    opacity: 0.7;
+}
+
+.checkbox_forget_password_wrapper {
+    width: 80%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    /* border: 1px solid black; */
+}
+
 #forgotPassword {
-    font-size: 12px;
     text-decoration: underline;
     cursor: pointer;
-    color: purple;
-    margin-top: -8px;
-    margin-left: -98px;
+    color: var(--color-seven);
+    /* color: rgb(194, 49, 194); */
 }
 
 .btn {
-    padding: 8px;
+    padding: 12px;
+    width: 80%;
     cursor: pointer;
     border-radius: 6px;
+    font-weight: 700;
     border: 1px solid rgb(238, 236, 236);
+    transition: all 0.3s;
+    background-color: var(--color-three);
+    color: var(--color-one);
 }
 
 .btn:hover {
-    scale: 1.03;
+    background-color: var(--color-one);
+    color: var(--color-three);
+    border: 1px solid var(--color-three);
+}
+
+.another_way {
+    font-size: 12px;
+}
+
+.another_way_anchor {
+    color: var(--color-seven);
+    font-size: 12px;
 }
 
 .borderColor {
@@ -69,12 +121,20 @@ body {
     height: 60px;
 }
 
-.heading1 {
-    margin-top: 200px;
-    font-size: 50px;
-    /* color: rgb(99, 103, 104); */
+.heading {
+    font-size: 40px;
 }
 
-/* .heading {
-    color: rgb(156, 156, 156);
-} */
+
+
+@media (max-width: 920px) {
+    .form {
+        width: 65%;
+    }
+}
+
+@media (max-width: 520px) {
+    .form {
+        width: 95%;
+    }
+}
